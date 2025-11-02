@@ -1,0 +1,33 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { icon: 'fab fa-twitter', url: '#' },
+  { icon: 'fab fa-facebook', url: '#' },
+  { icon: 'fab fa-instagram', url: '#' },
+  { icon: 'fab fa-linkedin', url: '#' }
+];
+---
+
+<footer class="bg-gradient-to-r from-purple-900 to-purple-700 text-white py-8 border-t-2 border-yellow-400">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-lg font-mono">&copy; {currentYear} JumpStats Pro. All rights reserved.</p>
+    
+    <div class="flex justify-center gap-6 mt-4">
+      {socialLinks.map((link) => (
+        <a 
+          href={link.url} 
+          class="text-yellow-300 hover:text-yellow-100 transition-all duration-300 transform hover:scale-110"
+          aria-label={`Visit us on ${link.icon.split('-')[2]}`}
+        >
+          <i class={`${link.icon} text-2xl`}></i>
+        </a>
+      ))}
+    </div>
+    
+    <div class="mt-6 pt-4 border-t border-yellow-400/30">
+      <p class="text-sm text-yellow-200 font-mono">
+        <span class="inline-block animate-pulse">●</span> FUTURISTIC TECHNOLOGY • DATA DRIVEN INSIGHTS
+      </p>
+    </div>
+  </div>
+</footer>

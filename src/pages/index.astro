@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    icon: 'fas fa-chart-line',
+    title: 'Precision Jump Tracking',
+    text: 'Measure vertical leaps, hang time, and explosiveness with neon-accurate sensors.'
+  },
+  {
+    icon: 'fas fa-basketball-ball',
+    title: 'Shot Analytics Dashboard',
+    text: 'Analyze shooting form, arc, and efficiency using vibrant gradient visualizations.'
+  },
+  {
+    icon: 'fas fa-brain',
+    title: 'Personalized Insights',
+    text: 'Get AI-driven recommendations to boost your performance, styled in a sleek, tech-inspired interface.'
+  },
+  {
+    icon: 'fas fa-plug',
+    title: 'Seamless Integration',
+    text: 'Connect effortlessly with existing training systems and devices for comprehensive analysis.'
+  }
+];
+
+const stats = [
+  { value: '99.7%', label: 'Accuracy Rate' },
+  { value: '24/7', label: 'Analytics Available' },
+  { value: '500+', label: 'Athletes Trusted' },
+  { value: '5x', label: 'Performance Improvement' }
+];
+
+const pageTitle = "JumpStats Pro - Elevate Your Game";
+const pageDescription = "Discover JumpStats Pro, the ultimate basketball analytics platform powered by futuristic tech. Track jumps, shots, and performance with vibrant, neon-infused insights to dominate the court.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-0 w-full h-full opacity-20">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-60 h-60 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+      </div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1 mb-4 text-sm font-semibold text-yellow-400 bg-yellow-900/50 rounded-full border border-yellow-400/30">
+          <i class="fas fa-bolt mr-2"></i> Futuristic Basketball Analytics
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          Elevate Your Game with <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-purple-400">Advanced Basketball Analytics</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl">
+          In the fast-paced world of basketball, every jump counts. JumpStats Pro harnesses cutting-edge AI and sensor technology to deliver real-time analytics that transform your training and gameplay.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-yellow-500/30">
+            Start Free Trial
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-purple-500 text-white font-bold rounded-lg hover:bg-purple-900/50 transition-all duration-300">
+            Watch Demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gradient-to-b from-gray-900 to-black">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat, index) => (
+          <div key={index} class="text-center p-6 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300">
+            <div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">{stat.value}</div>
+            <div class="text-gray-400">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose JumpStats Pro?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Our cutting-edge platform combines innovative technology with actionable insights to maximize your potential.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            class="group p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10"
+          >
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-600 to-yellow-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class={`${feature.icon} text-white text-xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-400">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-gradient-to-br from-gray-900 to-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">How It Works</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Transform your basketball experience in three simple steps
+        </p>
+      </div>
+      
+      <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="flex-1 text-center">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-600 to-yellow-500 flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Sensor Integration</h3>
+          <p class="text-gray-400">Attach our advanced sensors to your shoes and equipment for seamless data collection.</p>
+        </div>
+        
+        <div class="hidden md:block text-4xl text-yellow-400">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+        <div class="flex-1 text-center">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-600 to-yellow-500 flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Real-Time Analysis</h3>
+          <p class="text-gray-400">Our AI processes your movement data instantly with precision and clarity.</p>
+        </div>
+        
+        <div class="hidden md:block text-4xl text-yellow-400">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+        <div class="flex-1 text-center">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-600 to-yellow-500 flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Actionable Insights</h3>
+          <p class="text-gray-400">Receive personalized recommendations to optimize your game performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What Athletes Say</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Join thousands of athletes who've transformed their game with JumpStats Pro
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center text-white font-bold mr-4">JD</div>
+            <div>
+              <h4 class="font-bold text-white">James Davis</h4>
+              <p class="text-gray-400 text-sm">Professional Basketball Player</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"JumpStats Pro helped me improve my vertical leap by 12 inches in just one month. The analytics are incredibly accurate and the insights are game-changing."</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center text-white font-bold mr-4">SM</div>
+            <div>
+              <h4 class="font-bold text-white">Sarah Miller</h4>
+              <p class="text-gray-400 text-sm">College Coach</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"As a coach, I can now provide precise feedback to each player based on real data. The shot analytics dashboard has revolutionized how we train our team."</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center text-white font-bold mr-4">MR</div>
+            <div>
+              <h4 class="font-bold text-white">Mike Rodriguez</h4>
+              <p class="text-gray-400 text-sm">Basketball Enthusiast</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"I never thought I could track my jumps with this much precision. The mobile app makes it so easy to monitor my progress during workouts."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-purple-900/30 to-indigo-900/30">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Dominate the Court?</h2>
+        <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+          Join thousands of athletes already using JumpStats Pro to elevate their game with data-driven insights.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-yellow-500/30">
+            Start Your Free Trial
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-purple-500 text-white font-bold rounded-lg hover:bg-purple-900/50 transition-all duration-300">
+            Schedule a Demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes blob {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+    
+    .animate-blob {
+      animation: blob 15s infinite;
+    }
+    
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
+</Layout>

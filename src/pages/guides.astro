@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    icon: 'fas fa-chalkboard-teacher',
+    title: 'Expert-Driven Content',
+    text: 'Crafted by coaches and athletes with years of experience.'
+  },
+  {
+    icon: 'fas fa-fire',
+    title: 'Rustic Elegance',
+    text: 'Simple, straightforward tips that feel like fireside advice.'
+  },
+  {
+    icon: 'fas fa-trophy',
+    title: 'Tailored for All Levels',
+    text: 'From foundational basics to advanced strategies.'
+  }
+];
+
+const guides = [
+  {
+    id: 1,
+    title: 'Mastering Dribbling Fundamentals',
+    excerpt: 'Learn the core techniques that will transform your ball handling skills',
+    readTime: '8 min read'
+  },
+  {
+    id: 2,
+    title: 'Perfecting Your Shooting Form',
+    excerpt: 'Discover the science behind effective shooting mechanics',
+    readTime: '10 min read'
+  },
+  {
+    id: 3,
+    title: 'Advanced Court Vision Strategies',
+    excerpt: 'Elevate your gameplay with better court awareness techniques',
+    readTime: '12 min read'
+  },
+  {
+    id: 4,
+    title: 'Building Mental Toughness',
+    excerpt: 'Develop the mindset needed to excel under pressure',
+    readTime: '6 min read'
+  },
+  {
+    id: 5,
+    title: 'Conditioning for Peak Performance',
+    excerpt: 'Maximize your stamina and agility for better game results',
+    readTime: '9 min read'
+  },
+  {
+    id: 6,
+    title: 'Defensive Positioning Mastery',
+    excerpt: 'Master the art of staying in front of your opponent',
+    readTime: '11 min read'
+  }
+];
+
+const pageTitle = "Basketball Training Guides";
+const pageDescription = "Discover expert guides on basketball drills, techniques, and performance strategies to elevate your game at HoopsHaven Central.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#0d4730] to-[#1a6d4a] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">Basketball Training Guides</h1>
+        <p class="text-xl text-[#f0f8f5] mb-8 font-light">Your Central Hub for Basketball Training and Performance</p>
+        <div class="bg-[#ff6b6b] w-24 h-1 mx-auto mb-8"></div>
+        <p class="text-lg text-[#e0f5f0] max-w-2xl mx-auto leading-relaxed">
+          Discover expert guides on basketball drills, techniques, and performance strategies to elevate your game
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-b from-[#f8faf9] to-[#e8f4f1]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold text-[#0d4730] mb-4">Why Choose Our Guides?</h2>
+        <div class="w-20 h-1 bg-[#ff6b6b] mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        {features.map((feature, index) => (
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#d1e7e1]">
+            <div class="w-16 h-16 rounded-full bg-[#0d4730] flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-2xl text-white`}></i>
+            </div>
+            <h3 class="text-xl font-serif font-semibold text-[#0d4730] mb-3">{feature.title}</h3>
+            <p class="text-[#5f7b74]">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Guides -->
+  <section class="py-20 bg-[#f0f8f5]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold text-[#0d4730] mb-4">Featured Guides</h2>
+        <p class="text-[#5f7b74] max-w-2xl mx-auto">Curated wisdom from the pros to enhance your court presence</p>
+        <div class="w-20 h-1 bg-[#ff6b6b] mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {guides.map((guide) => (
+          <article class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-[#d1e7e1]">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="bg-[#ff6b6b] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  {guide.readTime}
+                </span>
+                <span class="text-[#0d4730] font-serif text-sm">Guide #{guide.id}</span>
+              </div>
+              
+              <h3 class="text-xl font-serif font-semibold text-[#0d4730] mb-3">{guide.title}</h3>
+              <p class="text-[#5f7b74] mb-6">{guide.excerpt}</p>
+              
+              <button class="w-full py-3 bg-[#0d4730] hover:bg-[#1a6d4a] text-white font-medium rounded-lg transition-colors duration-300 flex items-center justify-center">
+                Read Guide
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-[#0d4730]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold text-white mb-6">Ready to Elevate Your Game?</h2>
+        <p class="text-[#e0f5f0] text-xl mb-10 max-w-2xl mx-auto">
+          Join thousands of basketball players who have transformed their performance with our expert-guided training
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-[#ff6b6b] hover:bg-[#ff5252] text-white font-medium rounded-lg transition-colors duration-300 shadow-lg">
+            Explore All Guides
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0d4730] font-medium rounded-lg transition-colors duration-300">
+            Sign Up for Updates
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-20 bg-[#f8faf9]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="w-16 h-16 rounded-full bg-[#ff6b6b] flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-quote-left text-white text-2xl"></i>
+        </div>
+        <blockquote class="text-xl md:text-2xl font-serif italic text-[#0d4730] mb-8">
+          "These guides helped me go from an average player to a team captain in just one season. The foundation-building approach is unmatched."
+        </blockquote>
+        <div class="flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+          <div>
+            <p class="font-semibold text-[#0d4730]">Marcus Johnson</p>
+            <p class="text-[#5f7b74] text-sm">Varsity Point Guard</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
